@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Niraj Engineering - Futuristic High-Precision Progressive Tooling & Stamping Showcase. Built for dimensional perfection, certified to global engineering standards.">
+  <title>Niraj Engineering | Next-Gen Stamping & Progressive Tooling Showcase</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- HIGH-TECH INDUSTRIAL LOADING SCREEN -->
+  <div class="industrial-loader" id="loader">
+    <div class="loader-logo-container">
+      <div class="loader-ring">
+        <div class="loader-inner-ring"></div>
+      </div>
+      <div class="loader-progress" id="loader-pct">0%</div>
+      <div class="loader-text">INITIALIZING SYSTEMS</div>
+      <div class="loader-status-tick" id="loader-status-text">CALIBRATING MICROMETERS...</div>
+    </div>
+  </div>
+
+  <!-- BG VFX INTERACTIVE GRID & SPARKS CANVAS -->
+  <div class="noise-overlay"></div>
+  <div class="noise-static"></div>
+  <canvas class="particle-canvas" id="sparks-canvas"></canvas>
+
+  <!-- MAGNETIC CURSOR -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+  <!-- FIXED CYBERPUNK HUD INDICATORS -->
+  <div class="hud-fixed hud-left">
+    <div class="hud-panel glass" id="hud-system-status">
+      <div class="hud-label">
+        <span class="hud-label-dot"></span> SYSTEM SECURE
+      </div>
+      <div class="hud-value">NIRAJ-DX<span>v9.2</span></div>
+    </div>
+    
+    <div class="hud-panel glass" id="hud-stability">
+      <div class="hud-label">FEED STABILITY</div>
+      <div class="hud-value" id="hud-stress-val">99.98<span>%</span></div>
+      <svg class="hud-waveform" viewBox="0 0 130 20">
+        <path d="M0,10 Q15,0 30,18 T60,2 T90,16 T120,6 L130,10" fill="none" stroke="#00D6FF" stroke-width="1.5" id="hud-oscilloscope-path" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="hud-fixed hud-right">
+    <div class="hud-panel glass hud-panel-purple" id="hud-temperature">
+      <div class="hud-label">MOLD TEMP</div>
+      <div class="hud-value" id="hud-temp-val">1280<span>°C</span></div>
+    </div>
+
+    <div class="hud-panel glass" id="hud-pressure">
+      <div class="hud-label">PRESS LOAD</div>
+      <div class="hud-value" id="hud-force-val">800<span>TON</span></div>
+    </div>
+  </div>
+
+  <!-- SLIM GLASSMORPHIC HEADER NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo interactive-el">
+      <div class="nav-logo-icon"></div>
+      NIRAJ ENGINEERING
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link interactive-el">Overview</a></li>
+      <li><a href="#profile" class="nav-link interactive-el">Profile</a></li>
+      <li><a href="#capabilities" class="nav-link interactive-el">Capabilities</a></li>
+      <li><a href="#products" class="nav-link interactive-el">Products</a></li>
+      <li><a href="#workflow" class="nav-link interactive-el">Workflow</a></li>
+    </ul>
+    <a href="#footer" class="nav-cta interactive-el">Explore Manufacturing</a>
+  </nav>
+
+  <!-- --- HERO SECTION --- -->
+  <header class="hero-wrapper" id="hero">
+    <!-- Futuristic Grid overlay & slowly zooming camera background -->
+    <div class="hero-bg-container">
+      <img src="https://files.catbox.moe/es8e4h.png" class="hero-bg-media" alt="Futuristic Blueprint Stamping Strip Layout">
+      <div class="hero-glow-overlay"></div>
+      <div class="ambient-glowing-blob blob-cyan"></div>
+      <div class="ambient-glowing-blob blob-purple"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="section-badge interactive-el">NEXT GEN SYSTEM // 2026</div>
+      <h1 class="hero-title">
+        NEXT GEN
+        <span class="gradient-text-cyan-purple">TOOLING</span>
+      </h1>
+      <p class="hero-subtitle">Precision manufacturing and progressive tooling solutions trusted by tier-1 global industries.</p>
+      
+      <div class="scroll-indicator-container">
+        <div class="scroll-mouse">
+          <div class="scroll-mouse-wheel"></div>
+        </div>
+        <div class="scroll-mouse-text">SCROLL TO DISCOVER</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- COMPANY PROFILE SECTION --- -->
+  <section class="section-wrapper section-wrapper-alt" id="profile">
+    <div class="content-box">
+      <div class="profile-grid">
+        <div class="profile-text-side">
+          <div class="section-badge section-badge-purple interactive-el">ESTABLISHED 2006</div>
+          <h2 class="section-headline">PRECISION ENGINEERING SINCE 2006</h2>
+          <p class="profile-desc-highlight">Niraj Engineering delivers reliable, precision-driven and cost-effective manufacturing solutions for Automobile, Electrical and Industrial sectors.</p>
+          <p class="section-desc">With nearly two decades of continuous manufacturing expertise, we specialize in high-speed Progressive Tooling, complex multi-stage Press Tools, and heavy sheet metal component manufacturing. We combine state-of-the-art infrastructure with a highly certified process flow.</p>
+          
+          <!-- ISO Badge component -->
+          <div class="iso-badge-wrapper interactive-el">
+            <div class="iso-badge-icon">ISO</div>
+            <div class="iso-badge-details">
+              <h4>ISO 9001:2015 CERTIFIED</h4>
+              <p>Quality Management System standard accreditation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Animated Stats cards -->
+        <div class="profile-stats-side">
+          <div class="stat-card glass interactive-el" data-stat-target="50">
+            <div class="stat-number" id="stat-emp">0</div>
+            <div class="stat-label">Skilled Employees</div>
+          </div>
+          <div class="stat-card glass interactive-el" data-stat-target="40">
+            <div class="stat-number" id="stat-mach">0</div>
+            <div class="stat-label">Machines Installed</div>
+          </div>
+          <div class="stat-card glass interactive-el" data-stat-target="800">
+            <div class="stat-number" id="stat-press">0</div>
+            <div class="stat-label">Tons Press Capacity</div>
+          </div>
+          <div class="stat-card glass interactive-el" data-stat-target="24">
+            <div class="stat-number" id="stat-ops">0</div>
+            <div class="stat-label">Hours Operations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- MANUFACTURING CAPABILITIES SECTION --- -->
+  <section class="section-wrapper" id="capabilities">
+    <div class="content-box">
+      <div class="section-header">
+        <div class="section-badge interactive-el">CAPABILITIES PORTFOLIO</div>
+        <h2 class="section-headline">MANUFACTURING SOLUTIONS</h2>
+        <p class="section-desc">Our integrated tooling portfolio covers everything from digital high-speed stamping layouts to sub-micron assembly fixtures, engineered for long tool life and automated scale.</p>
+      </div>
+
+      <div class="capabilities-grid">
+        <!-- 1 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Progressive Tool Mfg</h3>
+          <p class="capability-card-desc">High-speed, multi-station stamping progressive dies designed to form parts in a single automated loop.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Stage Tool Mfg</h3>
+          <p class="capability-card-desc">Dedicated individual press line tooling for complex geometries demanding specialized separate forming cycles.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Sheet Metal Components</h3>
+          <p class="capability-card-desc">Mass-produced structural components built with consistent tolerances and high dimensional accuracy.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Tubular Components</h3>
+          <p class="capability-card-desc">Precision tube bending, profile cutting, swaging and structural fabrication for mechanical systems.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Jigs & Fixtures</h3>
+          <p class="capability-card-desc">Robotic welding fixtures and high-precision assembly tooling engineered for dimensional checks.</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Precision Press Tools</h3>
+          <p class="capability-card-desc">Accurately calibrated custom tooling designed to execute micro-tolerances over million-cycle bounds.</p>
+        </div>
+
+        <!-- 7 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          </div>
+          <h3 class="capability-card-title">SPM Manufacturing</h3>
+          <p class="capability-card-desc">Special Purpose Machines customized to automate complex, high-precision sorting or assembly operations.</p>
+        </div>
+
+        <!-- 8 -->
+        <div class="capability-card glass interactive-el">
+          <div class="capability-card-bg-glow"></div>
+          <div class="capability-icon-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="capability-card-title">Heavy Press Tooling</h3>
+          <p class="capability-card-desc">Rugged, structural multi-ton press plates and modular die casting frames engineered for massive pressure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FEATURED PRODUCTS SECTION --- -->
+  <section class="section-wrapper section-wrapper-alt" id="products">
+    <div class="content-box">
+      <div class="section-header">
+        <div class="section-badge section-badge-purple interactive-el">CATALOG & PORTFOLIO</div>
+        <h2 class="section-headline">FEATURED COMPONENTS & TOOLS</h2>
+        <p class="section-desc">Explore the dimensional perfection of our progressive stampings and precision tool configurations. Click "Product Details" on any item to view technical limits, rate specifications, and detail imagery.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- PRODUCT A -->
+        <div class="product-card glass" id="prod-a">
+          <div class="product-img-wrapper">
+            <div class="product-tag">AUTOMOBILE PARTS</div>
+            <img src="https://files.catbox.moe/sg1uip.png" class="product-img" alt="4mm Thickness Component PGT">
+          </div>
+          <div class="product-info-panel">
+            <h3 class="product-title">4mm Thickness Component PGT</h3>
+            <p class="product-short-desc">Precision stamped steel component created via progressive die tooling for automotive mounting assemblies.</p>
+            <a href="javascript:void(0)" class="product-details-btn interactive-el" 
+               data-modal-title="4mm Thickness Component PGT"
+               data-modal-cat="Automobile Parts"
+               data-modal-desc="Precision metal component made using progressive die tooling for automobile applications. Configured to handle intensive mechanical stress and continuous load cycles in dynamic vehicle environments."
+               data-modal-features="4mm thickness heavy gauge steel;High dimensional tolerance precision;Extremely strong & durable structural build;Corrosion-resistant protective coating;Perfected for automated high-volume assembly"
+               data-modal-rate-proto="15–45 minutes"
+               data-modal-rate-mass="1 piece in 5–20 seconds (after setup)"
+               data-modal-apps="Used in mounting brackets, engine supports, EV structural components, and chassis assemblies."
+               data-modal-img="https://files.catbox.moe/sg1uip.png">
+              Product Details
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT B -->
+        <div class="product-card glass" id="prod-b">
+          <div class="product-img-wrapper">
+            <div class="product-tag">AUTOMOBILE PARTS</div>
+            <img src="https://files.catbox.moe/es8e4h.png" class="product-img" alt="Progressive Tool Strip Layouts">
+          </div>
+          <div class="product-info-panel">
+            <h3 class="product-title">Progressive Tool Strip Layouts</h3>
+            <p class="product-short-desc">Innovative multi-station stamping progression strip layout design engineered for high speed and minimal waste.</p>
+            <a href="javascript:void(0)" class="product-details-btn interactive-el" 
+               data-modal-title="Progressive Tool Strip Layouts"
+               data-modal-cat="Automobile Parts"
+               data-modal-desc="Advanced continuous metal strip layout illustrating precision forming stages. Every feed rate is modeled digitally to minimize scrap metal loss and maximize geometric accuracy."
+               data-modal-features="Ultra-precision multi-stage progression;Highly reduced material scrap wastage;Optimized for high-speed continuous stamping;Perfect repeatability across millions of cycles;Compatible with automotive structural components"
+               data-modal-rate-proto="1–3 hours design setup"
+               data-modal-rate-mass="1 strip cycle in 2–10 seconds (based on complexity)"
+               data-modal-apps="Continuous multi-station forming operations for high-speed heavy machinery press lines."
+               data-modal-img="https://files.catbox.moe/es8e4h.png">
+              Product Details
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT C -->
+        <div class="product-card glass" id="prod-c">
+          <div class="product-img-wrapper">
+            <div class="product-tag">CONTACTS & TERMINALS</div>
+            <img src="https://files.catbox.moe/3gb79t.png" class="product-img" alt="Precision Components">
+          </div>
+          <div class="product-info-panel">
+            <h3 class="product-title">Precision Components</h3>
+            <p class="product-short-desc">Highly detailed brass, copper and alloy terminals engineered for stable high-conductivity applications.</p>
+            <a href="javascript:void(0)" class="product-details-btn interactive-el" 
+               data-modal-title="Precision Components"
+               data-modal-cat="Contacts & Terminals"
+               data-modal-desc="Micro-calibrated high-conductivity contacts, custom terminals and electrical busbars engineered to precision standards for switchgear systems."
+               data-modal-features="Advanced dimensional tolerances (±0.005mm);Excellent surface finish to prevent oxidation;Engineered conductivity calibration;Capable of millions of active mechanical cycles;Specialized industrial alloy plating"
+               data-modal-rate-proto="10–20 minutes prototype"
+               data-modal-rate-mass="1 terminal in 2–8 seconds (automated line)"
+               data-modal-apps="Heavy-duty electrical relays, smart switchgear, household appliances, and automotive circuitry lines."
+               data-modal-img="https://files.catbox.moe/3gb79t.png">
+              Product Details
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT D -->
+        <div class="product-card glass" id="prod-d">
+          <div class="product-img-wrapper">
+            <div class="product-tag">ELECTRICAL PARTS</div>
+            <img src="https://files.catbox.moe/alb7le.png" class="product-img" alt="Electrical Breaker Parts">
+          </div>
+          <div class="product-info-panel">
+            <h3 class="product-title">Electrical Breaker Parts</h3>
+            <p class="product-short-desc">Heavy-duty industrial switch and breaker contacts engineered for high thermal tolerance stability.</p>
+            <a href="javascript:void(0)" class="product-details-btn interactive-el" 
+               data-modal-title="Electrical Breaker Parts"
+               data-modal-cat="Electrical Parts"
+               data-modal-desc="Reliable industrial electrical breaker components designed for absolute safety, long-life durability, and stable performance in demanding grids."
+               data-modal-features="Superior heat & flame containment tolerances;Ultra-high copper/brass electrical conductivity;Strict dimensional validation checks;Strong corrosion-resistant metallic finishing;Perfected for heavy switchgear & breaker frames"
+               data-modal-rate-proto="10–25 minutes sample"
+               data-modal-rate-mass="1 breaker contact in 3–10 seconds"
+               data-modal-apps="Industrial air circuit breakers, grid switchgear panels, and high-load power distribution assemblies."
+               data-modal-img="https://files.catbox.moe/alb7le.png">
+              Product Details
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT E -->
+        <div class="product-card glass" id="prod-e">
+          <div class="product-img-wrapper">
+            <div class="product-tag">ELECTRICAL PARTS</div>
+            <img src="https://files.catbox.moe/wvwj5f.png" class="product-img" alt="Switch Plates & Shield">
+          </div>
+          <div class="product-info-panel">
+            <h3 class="product-title">Switch Plates & Shield</h3>
+            <p class="product-short-desc">Precision metallic shielding casings and protective switchboard housing plates designed for high safety benchmarks.</p>
+            <a href="javascript:void(0)" class="product-details-btn interactive-el" 
+               data-modal-title="Switch Plates & Shield"
+               data-modal-cat="Electrical Parts"
+               data-modal-desc="Premium-grade switch plates and shielding components designed for a precision fit, reliable insulation protection, and industrial structural durability."
+               data-modal-features="Highly refined burr-free edge finishing;Heavy-gauge protective corrosion-resistant sheet metal;Precisely punched assembly alignment holes;High rigidity to resist mechanical deform;Calibrated for standardized dimensions"
+               data-modal-rate-proto="10–30 minutes"
+               data-modal-rate-mass="1 finished plate in 3–8 seconds"
+               data-modal-apps="Used as electrical shielding enclosures, safety switch panels, and generic industrial machine frames."
+               data-modal-img="https://files.catbox.moe/wvwj5f.png">
+              Product Details
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT F -->
+        <div class="product-card glass" id="prod-f">
+          <div class="product-img-wrapper">
+            <div class="product-tag">PROGRESSIVE TOOLS</div>
+            <img src="https://files.catbox.moe/dm6vwe.png" class="product-img" alt="PGT III">
+          </div>
+          <div class="product-info-panel">
+            <h3 class="product-title">PGT III</h3>
+            <p class="product-short-desc">Next-generation high-speed automated progressive die block system built for automated high-volume cycles.</p>
+            <a href="javascript:void(0)" class="product-details-btn interactive-el" 
+               data-modal-title="PGT III"
+               data-modal-cat="Progressive Tools"
+               data-modal-desc="Next-generation progressive tooling block configured with tungsten carbide inserts and custom locator systems for ultra-fast stamping operations."
+               data-modal-features="Automated high-speed stamping capabilities;Sub-micron tool-steel micro-tolerances;Tungsten carbide punch points for long tool life;Significantly reduced scrap metal production rates;Quick bolster clamping layouts"
+               data-modal-rate-proto="1–4 hours machine setup adjustment"
+               data-modal-rate-mass="1 finished cycle in 2–6 seconds"
+               data-modal-apps="High-speed stamping operations producing micro-precision brackets and electrical contact strips."
+               data-modal-img="https://files.catbox.moe/dm6vwe.png">
+              Product Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- CINEMATIC MODAL WINDOW --- -->
+  <div class="product-details-modal-overlay" id="product-modal">
+    <div class="modal-content-scroller glass">
+      <button class="modal-close-btn interactive-el" id="modal-close-btn">&times;</button>
+      
+      <div class="modal-body-layout">
+        <!-- Absolute hero picture -->
+        <div class="modal-hero-view">
+          <img src="" class="modal-hero-img" id="modal-hero-image" alt="Product Cinematic Detailed Shot">
+          <canvas class="modal-hero-canvas" id="modal-hero-canvas" width="800" height="600" style="display: none; width: 100%; height: 100%; object-fit: contain; z-index: 2; position: relative; pointer-events: auto; cursor: ew-resize;"></canvas>
+          <div class="modal-hero-shadow-overlay"></div>
+        </div>
+
+        <!-- Technical Content Specs grid -->
+        <div class="modal-details-grid">
+          <div class="modal-desc-column">
+            <div class="section-badge interactive-el" id="modal-category">CATEGORY</div>
+            <h3 class="modal-headline" id="modal-title">Product Name</h3>
+            <p class="modal-desc-body" id="modal-description">Detailed description goes here...</p>
+
+            <div class="modal-spec-card">
+              <h4 class="modal-spec-title">Dynamic Features</h4>
+              <ul class="modal-spec-list" id="modal-features-list">
+                <!-- Injected via JavaScript -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="modal-tech-column">
+            <div class="modal-spec-card">
+              <h4 class="modal-spec-title">Production Speeds</h4>
+              <div class="modal-tech-card-pair">
+                <div class="modal-stat-panel">
+                  <span class="modal-stat-panel-label">Prototype Sample</span>
+                  <span class="modal-stat-panel-val" id="modal-rate-proto">--</span>
+                </div>
+                <div class="modal-stat-panel">
+                  <span class="modal-stat-panel-label">Mass Stamping</span>
+                  <span class="modal-stat-panel-val" id="modal-rate-mass">--</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-spec-card">
+              <h4 class="modal-spec-title">Application Scope</h4>
+              <p class="section-desc" style="font-size: 12px; color: var(--text-secondary);" id="modal-apps">Application text...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- HYPER-PREMIUM CINEMATIC SCROLLYTELLING MODAL --- -->
+  <div class="cinematic-scrolly-modal" id="cinematic-scrolly-modal">
+    <!-- Telemetry HUD & Controls -->
+    <div class="cinematic-hud">
+      <div class="cinematic-hud-brand">NIRAJ ENGINE SYSTEM v9.2</div>
+      <div class="cinematic-hud-logs" id="scrolly-hud-logs">SYSTEM ACTIVE // IDLE</div>
+      <div class="cinematic-hud-pct">
+        <span class="hud-label">SCROLL LEVEL</span>
+        <span class="hud-value" id="scrolly-pct-val">00%</span>
+      </div>
+    </div>
+    
+    <button class="cinematic-close-btn interactive-el" id="cinematic-close-btn" aria-label="Close cinematic engine">&times; CLOSE ENGINE</button>
+    
+    <!-- Vertical Scrollable Track -->
+    <div class="cinematic-scroll-track">
+      <!-- Sticky Container -->
+      <div class="cinematic-sticky-container">
+        
+        <!-- Ambient BG Effects -->
+        <div class="cinematic-grid-bg"></div>
+        <div class="cinematic-glow-blob" id="cinematic-glow-blob-orange"></div>
+        <div class="cinematic-glow-blob" id="cinematic-glow-blob-blue"></div>
+        
+        <!-- Cinematic Interactive Visual Stage (SVG & Floating Canvas Renders) -->
+        <div class="cinematic-visual-stage">
+          <!-- Sparks overlay inside scrollytelling -->
+          <canvas class="scrolly-sparks-canvas" id="scrolly-sparks-canvas"></canvas>
+          
+          <div class="visual-wrapper">
+            <!-- Stage 1 & 2: Progressive Strip Layout (Dynamic SVG schematic) -->
+            <svg class="stage-svg" id="svg-strip-layout" viewBox="0 0 1000 400" fill="none">
+              <!-- Molten Lava flow currents -->
+              <defs>
+                <linearGradient id="lava-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FF3C00" stop-opacity="0.2" />
+                  <stop offset="50%" stop-color="#FF6A00" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#FF3C00" stop-opacity="0.2" />
+                </linearGradient>
+                <linearGradient id="blue-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0050FF" stop-opacity="0.2" />
+                  <stop offset="50%" stop-color="#00D6FF" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#0050FF" stop-opacity="0.2" />
+                </linearGradient>
+              </defs>
+              <!-- Grid pattern for Blueprint feel -->
+              <pattern id="svg-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#svg-grid)" />
+              
+              <!-- Blueprint main border line -->
+              <rect x="10" y="10" width="980" height="380" rx="4" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+              
+              <!-- Main Stamping Strip Base Plate -->
+              <g id="strip-group">
+                <rect x="50" y="180" width="900" height="40" rx="3" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" id="strip-base" />
+                <rect x="50" y="180" width="900" height="40" rx="3" fill="url(#lava-glow)" id="strip-lava-layer" style="mix-blend-mode: screen;" />
+                
+                <!-- Separating Stages Groups -->
+                <!-- STAGE 01: BLANK -->
+                <g class="strip-stage" id="svg-stage-1" transform="translate(0, 0)">
+                  <rect x="70" y="160" width="100" height="80" rx="4" fill="rgba(10, 10, 12, 0.8)" stroke="#FF6A00" stroke-width="1.5" class="stage-plate" />
+                  <circle cx="120" cy="200" r="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3,3" />
+                  <text x="120" y="248" fill="#FFF" font-family="Space Grotesk" font-size="8" letter-spacing="1" text-anchor="middle" class="stage-text">01. BLANK</text>
+                </g>
+                
+                <!-- STAGE 02: PIERCING -->
+                <g class="strip-stage" id="svg-stage-2" transform="translate(0, 0)">
+                  <rect x="220" y="160" width="100" height="80" rx="4" fill="rgba(10, 10, 12, 0.8)" stroke="#FF6A00" stroke-width="1.5" class="stage-plate" />
+                  <!-- Punch holes -->
+                  <circle cx="270" cy="190" r="8" fill="#000" stroke="#FF6A00" stroke-width="1" />
+                  <circle cx="270" cy="210" r="8" fill="#000" stroke="#FF6A00" stroke-width="1" />
+                  <text x="270" y="248" fill="#FFF" font-family="Space Grotesk" font-size="8" letter-spacing="1" text-anchor="middle" class="stage-text">02. PIERCING</text>
+                </g>
+                
+                <!-- STAGE 03: FORMING -->
+                <g class="strip-stage" id="svg-stage-3" transform="translate(0, 0)">
+                  <rect x="370" y="160" width="100" height="80" rx="4" fill="rgba(10, 10, 12, 0.8)" stroke="#FF6A00" stroke-width="1.5" class="stage-plate" />
+                  <!-- Pressed shapes -->
+                  <path d="M390,200 L410,185 L430,200 L450,200" fill="none" stroke="#FF6A00" stroke-width="2" />
+                  <text x="420" y="248" fill="#FFF" font-family="Space Grotesk" font-size="8" letter-spacing="1" text-anchor="middle" class="stage-text">03. FORMING</text>
+                </g>
+                
+                <!-- STAGE 04: TRIMMING -->
+                <g class="strip-stage" id="svg-stage-4" transform="translate(0, 0)">
+                  <rect x="520" y="160" width="100" height="80" rx="4" fill="rgba(10, 10, 12, 0.8)" stroke="#FF6A00" stroke-width="1.5" class="stage-plate" />
+                  <!-- Trimmed outline -->
+                  <path d="M540,180 L600,180 A10,10 0 0,1 600,220 L540,220 Z" fill="none" stroke="#FF6A00" stroke-width="1.5" stroke-dasharray="2,2" />
+                  <text x="570" y="248" fill="#FFF" font-family="Space Grotesk" font-size="8" letter-spacing="1" text-anchor="middle" class="stage-text">04. TRIMMING</text>
+                </g>
+                
+                <!-- STAGE 05: SECONDARY PIERCING -->
+                <g class="strip-stage" id="svg-stage-5" transform="translate(0, 0)">
+                  <rect x="670" y="160" width="100" height="80" rx="4" fill="rgba(10, 10, 12, 0.8)" stroke="#FF6A00" stroke-width="1.5" class="stage-plate" />
+                  <circle cx="720" cy="200" r="4" fill="#000" stroke="#FF6A00" stroke-width="1" />
+                  <path d="M690,190 L750,190" fill="none" stroke="#FF6A00" stroke-width="1" />
+                  <text x="720" y="248" fill="#FFF" font-family="Space Grotesk" font-size="8" letter-spacing="1" text-anchor="middle" class="stage-text">05. 2ND PIERCE</text>
+                </g>
+                
+                <!-- STAGE 06: FINAL PART -->
+                <g class="strip-stage" id="svg-stage-6" transform="translate(0, 0)">
+                  <rect x="820" y="160" width="100" height="80" rx="4" fill="rgba(10, 10, 12, 0.8)" stroke="#FF6A00" stroke-width="2" class="stage-plate" id="final-part-plate" />
+                  <!-- Polished bracket shape -->
+                  <rect x="840" y="185" width="60" height="30" rx="2" fill="rgba(255,255,255,0.05)" stroke="#FF6A00" stroke-width="1.5" />
+                  <circle cx="855" cy="200" r="4" fill="#000" stroke="#FF6A00" stroke-width="1" />
+                  <circle cx="885" cy="200" r="4" fill="#000" stroke="#FF6A00" stroke-width="1" />
+                  <text x="870" y="248" fill="#FFF" font-family="Space Grotesk" font-size="8" letter-spacing="1" text-anchor="middle" class="stage-text">06. FINAL PART</text>
+                </g>
+              </g>
+            </svg>
+            
+            <!-- Stage 3: Machinery Showcase -->
+            <div class="machinery-stage" id="machinery-stage">
+              <div class="machine-panel-card glass" id="machine-press">
+                <div class="machine-icon">⚙️</div>
+                <div class="machine-name">HEAVY MECHANICAL PRESS</div>
+                <div class="machine-desc">800-Ton industrial pressing layout for progress stampings.</div>
+                <div class="machine-hud-bar"><span style="width: 85%;"></span></div>
+                <div class="machine-hud-stat">LOAD ENGINE: 85% // STATUS: STABLE</div>
+              </div>
+              <div class="machine-panel-card glass" id="machine-vmc">
+                <div class="machine-icon">💻</div>
+                <div class="machine-name">CNC VMC STATION</div>
+                <div class="machine-desc">Micro-precision milling for progressive die block machining.</div>
+                <div class="machine-hud-bar"><span style="width: 92%;"></span></div>
+                <div class="machine-hud-stat">SPINDLE RATE: 12,000 RPM // STABLE</div>
+              </div>
+              <div class="machine-panel-card glass" id="machine-edm">
+                <div class="machine-icon">⚡</div>
+                <div class="machine-name">EDM WIRE CUT CNC</div>
+                <div class="machine-desc">Sub-micron thermal spark wire cutting for hardened tooling dies.</div>
+                <div class="machine-hud-bar"><span style="width: 76%;"></span></div>
+                <div class="machine-hud-stat">GAP CONTROL: ACTIVE // 0.001mm</div>
+              </div>
+            </div>
+            
+            <!-- Stage 4: Materials Rotator Stage -->
+            <div class="materials-stage" id="materials-stage">
+              <div class="materials-rotator-container">
+                <div class="material-sphere interactive-el" id="mat-copper"><span>COPPER</span></div>
+                <div class="material-sphere interactive-el" id="mat-brass"><span>BRASS</span></div>
+                <div class="material-sphere interactive-el" id="mat-aluminum"><span>ALUMINUM</span></div>
+                <div class="material-sphere interactive-el" id="mat-steel"><span>STAINLESS</span></div>
+                <div class="material-sphere interactive-el" id="mat-crca"><span>CRCA</span></div>
+                <div class="material-sphere interactive-el" id="mat-pb"><span>P-BRONZE</span></div>
+              </div>
+              
+              <!-- Calibration Measurement caliper HUD overlay -->
+              <div class="caliper-hud glass">
+                <div class="caliper-bar"></div>
+                <div class="caliper-hud-title">ISO 9001:2015 QUALITY CHECKER</div>
+                <div class="caliper-hud-value">CALIBRATION RANGE: ±0.005mm</div>
+                <div class="caliper-hud-tick">TOLERANCE STATUS: MATCHED 100%</div>
+              </div>
+            </div>
+            
+            <!-- Stage 5: Global Industry Map -->
+            <div class="global-stage" id="global-stage">
+              <div class="world-map-svg-container">
+                <svg viewBox="0 0 1000 500" fill="none" class="world-map-svg">
+                  <rect x="0" y="0" width="1000" height="500" rx="6" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.03)" />
+                  <circle cx="250" cy="200" r="18" fill="rgba(0,80,255,0.08)" />
+                  <circle cx="500" cy="180" r="22" fill="rgba(0,214,255,0.08)" />
+                  <circle cx="590" cy="280" r="25" fill="rgba(255,106,0,0.1)" id="map-hub-india" />
+                  <circle cx="530" cy="240" r="15" fill="rgba(0,214,255,0.08)" id="map-hub-dubai" />
+                  <circle cx="480" cy="160" r="16" fill="rgba(0,80,255,0.08)" id="map-hub-europe" />
+                  
+                  <path d="M590,280 Q560,260 530,240" stroke="#00D6FF" stroke-width="1.5" stroke-dasharray="4,4" id="arc-dubai" />
+                  <path d="M590,280 Q535,220 480,160" stroke="#FF6A00" stroke-width="1.5" stroke-dasharray="4,4" id="arc-europe" />
+                </svg>
+              </div>
+              
+              <div class="logo-wall-wrapper">
+                <div class="logo-wall-headline">TRUSTED ENGINEERING OEM PARTNERS</div>
+                <div class="logo-wall-grid">
+                  <div class="logo-badge">SIEMENS</div>
+                  <div class="logo-badge">SCHNEIDER</div>
+                  <div class="logo-badge">LEGRAND</div>
+                  <div class="logo-badge">L&T</div>
+                  <div class="logo-badge">TATA MOTORS</div>
+                  <div class="logo-badge">MAHINDRA</div>
+                  <div class="logo-badge">VOLKSWAGEN</div>
+                  <div class="logo-badge">FORD</div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Story Panel Lanes (Vertical sequential narrative slides) -->
+        <div class="cinematic-story-track">
+          <!-- Slide 01: Hero -->
+          <div class="story-slide active" id="slide-1">
+            <div class="story-badge">01 // FORGING COMMENCEMENT</div>
+            <h2 class="story-title">PRECISION ENGINEERING FOR THE FUTURE</h2>
+            <p class="story-subtitle">Advanced Progressive Tooling & Industrial Stamping Solutions.</p>
+            <p class="story-desc">Built for precision. Engineered for performance. Trusted by global high-value industries.</p>
+            <div class="story-ctas">
+              <button class="story-cta-btn scrolly-close-trigger interactive-el">Explore Capabilities</button>
+              <a href="mailto:design@nirajengineering.in" class="story-cta-btn secondary interactive-el">Contact Us</a>
+            </div>
+          </div>
+          
+          <!-- Slide 02: Separation Reveal -->
+          <div class="story-slide" id="slide-2">
+            <div class="story-badge">02 // STRIP STAGE DECONSTRUCTION</div>
+            <h2 class="story-title">Progressive Tool Strip Layouts</h2>
+            <p class="story-subtitle">High Precision. High Efficiency. Consistent Quality.</p>
+            <div class="story-bullets">
+              <div class="story-bullet"><span>•</span> Advanced tooling systems engineered for mass production and dimensional accuracy.</div>
+              <div class="story-bullet"><span>•</span> Every stage optimized for reliability, repeatability, and industrial performance.</div>
+            </div>
+          </div>
+          
+          <!-- Slide 03: Infrastructure -->
+          <div class="story-slide" id="slide-3">
+            <div class="story-badge">03 // INDUSTRIAL INFRASTRUCTURE</div>
+            <h2 class="story-title">Advanced Manufacturing Infrastructure</h2>
+            <p class="story-subtitle">40+ machines. 24×7 operations. Up to 800 Ton press capacity.</p>
+            <p class="story-desc">Precision manufacturing powered by modern high-speed tooling setups and highly skilled toolmaker teams in MIDC Nashik.</p>
+          </div>
+          
+          <!-- Slide 04: Materials and Calibrations -->
+          <div class="story-slide" id="slide-4">
+            <div class="story-badge">04 // METALLURGICAL VALIDATION</div>
+            <h2 class="story-title">Engineered Without Compromise</h2>
+            <p class="story-subtitle">ISO 9001:2015 certified manufacturing with strict quality assurance systems.</p>
+            <div class="story-bullets">
+              <div class="story-bullet"><span>•</span> Sub-micron tolerances validated on materials ranging from Spring Steel to Phosphor Bronze.</div>
+              <div class="story-bullet"><span>•</span> Precision inspection. Process validation. Reliable mechanical performance.</div>
+            </div>
+          </div>
+          
+          <!-- Slide 05: Global Logistics -->
+          <div class="story-slide" id="slide-5">
+            <div class="story-badge">05 // GLOBAL OUTREACH NETWORK</div>
+            <h2 class="story-title">Trusted By Global Industries</h2>
+            <p class="story-subtitle">Delivering precision manufacturing solutions for automotive, electrical, and industrial engineering sectors.</p>
+            <p class="story-desc">Trusted by tier-1 brands across Dubai, Europe, and India, with highly optimized logistics networks ensuring rapid sea dispatch.</p>
+          </div>
+          
+          <!-- Slide 06: Final Reassembly -->
+          <div class="story-slide" id="slide-6">
+            <div class="story-badge">06 // FINAL REASSEMBLY CAPSTONE</div>
+            <h2 class="story-title">ENGINEERED FOR INDUSTRY.</h2>
+            <p class="story-subtitle">Built with precision. Driven by innovation.</p>
+            <p class="story-desc">Our components represent the peak of structural metal stamping and progressive design integrity. Reassembled into modular excellence.</p>
+            <div class="story-ctas">
+              <button class="story-cta-btn scrolly-close-trigger interactive-el">Explore Niraj Engineering</button>
+              <a href="tel:+919766200472" class="story-cta-btn secondary interactive-el">Get In Touch</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- --- HYPER-PREMIUM CINEMATIC PGT III SCROLLYTELLING MODAL --- -->
+  <div class="cinematic-scrolly-modal pgt3-scrolly-modal" id="pgt3-scrolly-modal">
+    <!-- Slim Translucent Apple-Inspired Navbar -->
+    <div class="pgt3-navbar" id="pgt3-navbar">
+      <div class="pgt3-nav-brand">PGT III</div>
+      <div class="pgt3-nav-links">
+        <a href="javascript:void(0)" class="pgt3-nav-link active interactive-el" data-target-pct="0">Overview</a>
+        <a href="javascript:void(0)" class="pgt3-nav-link interactive-el" data-target-pct="25">Engineering</a>
+        <a href="javascript:void(0)" class="pgt3-nav-link interactive-el" data-target-pct="50">Automation</a>
+        <a href="javascript:void(0)" class="pgt3-nav-link interactive-el" data-target-pct="70">Precision</a>
+        <a href="javascript:void(0)" class="pgt3-nav-link interactive-el" data-target-pct="90">Performance</a>
+        <a href="javascript:void(0)" class="pgt3-nav-link interactive-el" data-target-pct="100">Contact</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="tel:+919766200472" class="pgt3-nav-cta interactive-el">Explore PGT III</a>
+        <button class="pgt3-close-trigger interactive-el" style="background:transparent; border:none; color:#8E949F; font-size:11px; font-family:var(--font-mono); letter-spacing:1px; cursor:pointer;" id="pgt3-nav-close">✕ CLOSE</button>
+      </div>
+    </div>
+
+    <!-- Telemetry HUD & Controls -->
+    <div class="cinematic-hud">
+      <div class="cinematic-hud-brand">NIRAJ PGT III ENGINE v1.0</div>
+      <div class="cinematic-hud-logs" id="pgt3-hud-logs">SYSTEM ACTIVE // IDLE</div>
+      <div class="cinematic-hud-pct">
+        <span class="hud-label">SCROLL LEVEL</span>
+        <span class="hud-value" id="pgt3-pct-val">00%</span>
+      </div>
+    </div>
+    
+    <button class="cinematic-close-btn pgt3-close-trigger interactive-el" id="pgt3-close-btn" style="top: 80px;" aria-label="Close cinematic engine">&times; CLOSE ENGINE</button>
+    
+    <!-- Vertical Scrollable Track -->
+    <div class="cinematic-scroll-track" style="height: 600vh;">
+      <!-- Sticky Container -->
+      <div class="cinematic-sticky-container">
+        
+        <!-- Ambient BG Effects -->
+        <div class="cinematic-grid-bg"></div>
+        <div class="cinematic-glow-blob" id="pgt3-glow-blob-orange"></div>
+        <div class="cinematic-glow-blob" id="pgt3-glow-blob-blue"></div>
+        
+        <!-- Cinematic Visual Stage -->
+        <div class="cinematic-visual-stage">
+          <div class="visual-wrapper" style="height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+            <!-- Canvas overlay for Sparks -->
+            <canvas class="scrolly-sparks-canvas" id="pgt3-sparks-canvas" style="z-index: 4;"></canvas>
+            
+            <!-- 290 Frames Image Canvas -->
+            <canvas class="pgt3-image-canvas" id="pgt3-image-canvas" width="1024" height="576" style="z-index: 3; max-width: 100%; max-height: 85%; width: auto; height: auto; object-fit: contain; box-shadow: 0 20px 50px rgba(0,0,0,0.9); border-radius: 6px; border: 1px solid rgba(255,255,255,0.03);"></canvas>
+            
+            <!-- Volumetric glow filter or HUD coordinates overlay -->
+            <div class="pgt3-hud-overlay" style="position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 5;">
+              <div class="hud-crosshair" style="position: absolute; top: 50%; left: 50%; width: 30px; height: 30px; border: 1px solid rgba(0, 214, 255, 0.15); transform: translate(-50%, -50%); border-radius: 50%;"></div>
+              <div class="hud-scanner-line" id="pgt3-scanner" style="position: absolute; width: 100%; height: 2px; background: linear-gradient(90deg, rgba(0, 80, 255, 0) 0%, rgba(0, 214, 255, 0.4) 50%, rgba(0, 80, 255, 0) 100%); top: 0%; opacity: 0; pointer-events: none;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Story Panel Lanes (Vertical sequential narrative slides) -->
+        <div class="cinematic-story-track">
+          <!-- Slide 01: Hero (0-15%) -->
+          <div class="story-slide active" id="pgt3-slide-1">
+            <div class="story-badge" style="color: #FF6A00;">01 // FORGING INCEPTION</div>
+            <h2 class="story-title">PGT III</h2>
+            <p class="story-subtitle" style="color: #00D6FF;">Next-generation progressive tooling designed for high-speed industrial automation.</p>
+            <p class="story-desc">Ultra-precision tooling engineered for speed, consistency, and industrial performance.</p>
+            <div class="story-ctas">
+              <button class="story-cta-btn pgt3-nav-scroll-btn interactive-el" data-target-pct="25" style="background: #FF6A00; border-color: #FF6A00; box-shadow: 0 0 15px rgba(255, 106, 0, 0.3);">Explore Engineering</button>
+              <button class="story-cta-btn secondary pgt3-nav-scroll-btn interactive-el" data-target-pct="70">View Specifications</button>
+            </div>
+          </div>
+          
+          <!-- Slide 02: Precision Engineered (15-40%) -->
+          <div class="story-slide" id="pgt3-slide-2">
+            <div class="story-badge" style="color: #00D6FF;">02 // SUB-MICRON ANALYSIS</div>
+            <h2 class="story-title">Precision Engineered.</h2>
+            <p class="story-subtitle" style="color: #FF6A00;">Every component optimized for ultra-precision manufacturing and repeatable accuracy.</p>
+            <div class="story-bullets">
+              <div class="story-bullet"><span>•</span> Designed for high-speed production environments.</div>
+              <div class="story-bullet"><span>•</span> Built with premium industrial-grade materials.</div>
+              <div class="story-bullet"><span>•</span> Finite Element Analysis (FEA) validated structure for extreme stamping loads.</div>
+            </div>
+          </div>
+          
+          <!-- Slide 03: Automation Section (40-60%) -->
+          <div class="story-slide" id="pgt3-slide-3">
+            <div class="story-badge" style="color: #FF6A00;">03 // SYSTEMS INTEGRATION</div>
+            <h2 class="story-title">Automation Ready.</h2>
+            <p class="story-subtitle" style="color: #00D6FF;">Designed for seamless integration with high-speed industrial automation systems.</p>
+            <div class="story-bullets" style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(0, 214, 255, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(0, 80, 255, 0.05);">
+                <span style="color: #00D6FF;">⚡</span> HIGH-SPEED OPERATION
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(0, 214, 255, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(0, 80, 255, 0.05);">
+                <span style="color: #00D6FF;">🎯</span> AUTOMATED PRECISION
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(0, 214, 255, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(0, 80, 255, 0.05);">
+                <span style="color: #00D6FF;">🔄</span> CONTINUOUS PRODUCTION
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(0, 214, 255, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(0, 80, 255, 0.05);">
+                <span style="color: #00D6FF;">⏱️</span> MINIMAL DOWNTIME
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(0, 214, 255, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(0, 80, 255, 0.05);">
+                <span style="color: #00D6FF;">💎</span> ADVANCED TOOL LIFE
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 04: Precision & Performance (60-80%) -->
+          <div class="story-slide" id="pgt3-slide-4">
+            <div class="story-badge" style="color: #00D6FF;">04 // TOLERANCE & AUDIT</div>
+            <h2 class="story-title">Built For Performance.</h2>
+            <p class="story-subtitle" style="color: #FF6A00;">High precision. High efficiency. Durable and reliable industrial tooling solutions.</p>
+            <div class="story-bullets" style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(255, 106, 0, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(255, 106, 0, 0.05);">
+                <span style="color: #FF6A00;">⚙️</span> TIGHT TOLERANCES: ±0.002mm
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(255, 106, 0, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(255, 106, 0, 0.05);">
+                <span style="color: #FF6A00;">📈</span> CONSISTENT QUALITY
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(255, 106, 0, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(255, 106, 0, 0.05);">
+                <span style="color: #FF6A00;">💪</span> PREMIUM MATERIAL STRENGTH
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(255, 106, 0, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(255, 106, 0, 0.05);">
+                <span style="color: #FF6A00;">🛡️</span> LONG OPERATIONAL LIFE
+              </div>
+              <div class="pgt3-pill glass" style="padding: 10px 15px; border-radius: 4px; border: 1px solid rgba(255, 106, 0, 0.15); display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10px; color: #FFF; background: rgba(255, 106, 0, 0.05);">
+                <span style="color: #FF6A00;">🚀</span> MAXIMUM PRODUCTIVITY
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 05: Reassembly & Final Hero (80-100%) -->
+          <div class="story-slide" id="pgt3-slide-5">
+            <div class="story-badge" style="color: #FF6A00;">05 // METALLURGICAL CAPSTONE</div>
+            <h2 class="story-title">ENGINEERED FOR THE FUTURE.</h2>
+            <p class="story-subtitle" style="color: #00D6FF;">Advanced progressive tooling for next-generation manufacturing.</p>
+            <p class="story-desc">The completed PGT III system is fully assembled, calibrated, and ready for high-speed delivery networks.</p>
+            <div class="story-ctas">
+              <button class="story-cta-btn pgt3-close-trigger interactive-el" style="background: #0050FF; border-color: #0050FF; box-shadow: 0 0 15px rgba(0, 80, 255, 0.3);">Explore PGT III</button>
+              <a href="tel:+919766200472" class="story-cta-btn secondary interactive-el">Contact Niraj Engineering</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- --- PGT 4MM COMPONENT CINEMATIC SCROLLYTELLING MODAL --- -->
+  <div class="cinematic-scrolly-modal pgt-scrolly-modal" id="pgt-scrolly-modal">
+    <!-- Apple-Style Translucent Navbar -->
+    <div class="pgt-navbar" id="pgt-navbar">
+      <div class="pgt-nav-brand">4MM COMPONENT PGT</div>
+      <div class="pgt-nav-links">
+        <a href="javascript:void(0)" class="pgt-nav-link active interactive-el" data-pgt-pct="0">Overview</a>
+        <a href="javascript:void(0)" class="pgt-nav-link interactive-el" data-pgt-pct="20">Engineering</a>
+        <a href="javascript:void(0)" class="pgt-nav-link interactive-el" data-pgt-pct="45">Materials</a>
+        <a href="javascript:void(0)" class="pgt-nav-link interactive-el" data-pgt-pct="65">Performance</a>
+        <a href="javascript:void(0)" class="pgt-nav-link interactive-el" data-pgt-pct="85">Perfection</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="tel:+919766200472" class="pgt-nav-cta interactive-el">Request Sample</a>
+        <button class="pgt-close-trigger interactive-el" style="background:transparent; border:none; color:#8E949F; font-size:11px; font-family:var(--font-mono); letter-spacing:1px; cursor:pointer;" id="pgt-nav-close">✕ CLOSE</button>
+      </div>
+    </div>
+
+    <!-- Telemetry HUD -->
+    <div class="cinematic-hud">
+      <div class="cinematic-hud-brand">NIRAJ ENGINE SYSTEM v9.2</div>
+      <div class="cinematic-hud-logs" id="pgt-hud-logs">STAGING BASE METAL ASSEMBLY</div>
+      <div class="cinematic-hud-pct">
+        <span class="hud-label">SCROLL LEVEL</span>
+        <span class="hud-value" id="pgt-pct-val">00%</span>
+      </div>
+    </div>
+
+    <button class="cinematic-close-btn pgt-close-trigger interactive-el" id="pgt-close-btn" style="top: 80px;" aria-label="Close PGT cinematic">&times; CLOSE ENGINE</button>
+
+    <!-- Vertical Scrollable Track -->
+    <div class="cinematic-scroll-track" id="pgt-scroll-track" style="height: 600vh;">
+      <!-- Sticky Container -->
+      <div class="cinematic-sticky-container">
+
+        <!-- Ambient BG -->
+        <div class="cinematic-grid-bg"></div>
+        <div class="cinematic-glow-blob" id="pgt-glow-blob-orange"></div>
+        <div class="cinematic-glow-blob" id="pgt-glow-blob-blue"></div>
+
+        <!-- Left: Canvas Image Sequence -->
+        <div class="cinematic-visual-stage">
+          <div class="visual-wrapper" style="height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+            <!-- Sparks -->
+            <canvas class="scrolly-sparks-canvas" id="pgt-sparks-canvas" style="z-index: 4;"></canvas>
+
+            <!-- 40-Frame Rotation Canvas -->
+            <canvas id="pgt-image-canvas" width="800" height="600"
+              style="z-index: 3; max-width: 100%; max-height: 85%; width: auto; height: auto; object-fit: contain; box-shadow: 0 20px 50px rgba(0,0,0,0.9); border-radius: 6px; border: 1px solid rgba(255,255,255,0.04);"></canvas>
+
+            <!-- HUD Overlay & Scanner -->
+            <div style="position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 5;">
+              <div style="position: absolute; top: 50%; left: 50%; width: 30px; height: 30px; border: 1px solid rgba(0,214,255,0.15); transform: translate(-50%,-50%); border-radius: 50%;"></div>
+              <div id="pgt-scanner" style="position: absolute; width: 100%; height: 2px; background: linear-gradient(90deg, rgba(0,80,255,0) 0%, rgba(0,214,255,0.4) 50%, rgba(0,80,255,0) 100%); top: 0; opacity: 0; pointer-events: none;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story Slides -->
+        <div class="cinematic-story-track">
+          <!-- Slide 01: Hero (0–15%) -->
+          <div class="story-slide active" id="pgt-slide-1">
+            <div class="story-badge" style="color: #FF6A00;">01 // FORGING INCEPTION</div>
+            <h2 class="story-title">4MM PRECISION COMPONENT</h2>
+            <p class="story-subtitle" style="color:#00D6FF;">Automotive-grade stamped steel mounting bracket engineered for dimensional perfection.</p>
+            <p class="story-desc">Precision metal component made using progressive die tooling for automobile applications. Configured for intensive mechanical stress and continuous load cycles.</p>
+            <div class="story-ctas">
+              <button class="story-cta-btn pgt-nav-scroll-btn interactive-el" data-pgt-pct="20" style="background:#FF6A00; border-color:#FF6A00; box-shadow:0 0 15px rgba(255,106,0,0.3);">Explore Engineering</button>
+              <button class="story-cta-btn secondary pgt-nav-scroll-btn interactive-el" data-pgt-pct="65">View Specifications</button>
+            </div>
+          </div>
+
+          <!-- Slide 02: Engineering (15–40%) -->
+          <div class="story-slide" id="pgt-slide-2">
+            <div class="story-badge" style="color:#00D6FF;">02 // PRECISION ENGINEERING</div>
+            <h2 class="story-title">Precision Engineered.</h2>
+            <p class="story-subtitle" style="color:#FF6A00;">Every angle optimized. Every tolerance validated.</p>
+            <div class="story-bullets">
+              <div class="pgt3-pill glass" style="padding:10px 15px; border-radius:4px; border:1px solid rgba(0,214,255,0.15); display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; color:#FFF; background:rgba(0,80,255,0.05);">
+                <span style="color:#00D6FF;">⚙️</span> 4MM HEAVY GAUGE STEEL
+              </div>
+              <div class="pgt3-pill glass" style="padding:10px 15px; border-radius:4px; border:1px solid rgba(0,214,255,0.15); display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; color:#FFF; background:rgba(0,80,255,0.05);">
+                <span style="color:#00D6FF;">📐</span> ±0.05MM TOLERANCE
+              </div>
+              <div class="pgt3-pill glass" style="padding:10px 15px; border-radius:4px; border:1px solid rgba(0,214,255,0.15); display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; color:#FFF; background:rgba(0,80,255,0.05);">
+                <span style="color:#00D6FF;">🏭</span> 800T PRESS FORMED
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 03: Materials (40–60%) -->
+          <div class="story-slide" id="pgt-slide-3">
+            <div class="story-badge" style="color:#00D6FF;">03 // MATERIAL COMPOSITION</div>
+            <h2 class="story-title">High-Grade Material.</h2>
+            <p class="story-subtitle" style="color:#00D6FF;">Engineered to withstand extreme automotive environments.</p>
+            <div class="story-bullets" style="display:flex; flex-wrap:wrap; gap:10px; flex-direction:row;">
+              <span style="padding:8px 16px; border-radius:20px; border:1px solid rgba(0,214,255,0.25); font-family:var(--font-mono); font-size:9px; color:#00D6FF; background:rgba(0,214,255,0.04);">CRCA STEEL</span>
+              <span style="padding:8px 16px; border-radius:20px; border:1px solid rgba(0,214,255,0.25); font-family:var(--font-mono); font-size:9px; color:#00D6FF; background:rgba(0,214,255,0.04);">CORROSION COATING</span>
+              <span style="padding:8px 16px; border-radius:20px; border:1px solid rgba(0,214,255,0.25); font-family:var(--font-mono); font-size:9px; color:#00D6FF; background:rgba(0,214,255,0.04);">HEAT TREATED</span>
+              <span style="padding:8px 16px; border-radius:20px; border:1px solid rgba(0,214,255,0.25); font-family:var(--font-mono); font-size:9px; color:#00D6FF; background:rgba(0,214,255,0.04);">STRESS TESTED</span>
+            </div>
+            <p class="story-desc">Sub-micron quality validation across all material surfaces. ISO 9001:2015 certified manufacturing process with dimensional checks at every stage.</p>
+          </div>
+
+          <!-- Slide 04: Performance (60–80%) -->
+          <div class="story-slide" id="pgt-slide-4">
+            <div class="story-badge" style="color:#B026FF;">04 // PERFORMANCE AUDIT</div>
+            <h2 class="story-title">Built For Performance.</h2>
+            <p class="story-subtitle" style="color:#FF6A00;">Production-grade durability for high-volume automotive assembly lines.</p>
+            <div class="story-bullets">
+              <div class="pgt3-pill glass" style="padding:10px 15px; border-radius:4px; border:1px solid rgba(255,106,0,0.15); display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; color:#FFF; background:rgba(255,106,0,0.05);">
+                <span style="color:#FF6A00;">⚡</span> 1 PART / 5 SECONDS
+              </div>
+              <div class="pgt3-pill glass" style="padding:10px 15px; border-radius:4px; border:1px solid rgba(255,106,0,0.15); display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; color:#FFF; background:rgba(255,106,0,0.05);">
+                <span style="color:#FF6A00;">♾️</span> MILLION+ CYCLE LIFE
+              </div>
+              <div class="pgt3-pill glass" style="padding:10px 15px; border-radius:4px; border:1px solid rgba(255,106,0,0.15); display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; color:#FFF; background:rgba(255,106,0,0.05);">
+                <span style="color:#FF6A00;">🏆</span> ISO 9001 CERTIFIED
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 05: Capstone (80–100%) -->
+          <div class="story-slide" id="pgt-slide-5">
+            <div class="story-badge" style="color:#FF6A00;">05 // METALLURGICAL CAPSTONE</div>
+            <h2 class="story-title">ENGINEERED TO PERFECTION.</h2>
+            <p class="story-subtitle" style="color:#00D6FF;">The complete 4mm automotive bracket — stamped, formed, coated, and certified.</p>
+            <p class="story-desc">A fully inspected component ready for tier-1 automotive and industrial assembly environments. Trusted by global OEMs.</p>
+            <div class="story-ctas">
+              <button class="story-cta-btn pgt-close-trigger interactive-el" style="background:#0050FF; border-color:#0050FF; box-shadow:0 0 15px rgba(0,80,255,0.3);">Explore Portfolio</button>
+              <a href="tel:+919766200472" class="story-cta-btn secondary interactive-el">Contact Engineering</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- --- INDUSTRIES WE SERVE --- -->
+  <section class="section-wrapper" id="industries">
+    <div class="content-box">
+      <div class="section-header">
+        <div class="section-badge interactive-el">INDUSTRIAL SEGMENTS</div>
+        <h2 class="section-headline">INDUSTRIES WE SERVE</h2>
+        <p class="section-desc">Our manufacturing capabilities deliver certified engineering reliability to high-value technical sectors globally.</p>
+      </div>
+
+      <div class="industries-grid">
+        <!-- 1 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          <h4 class="industry-title">Automotive Industry</h4>
+          <p class="industry-desc">High-strength stamped brackets, locator tabs, switch housings, and EV drivetrain metal shielding plates.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <h4 class="industry-title">Electrical & Switchgear</h4>
+          <p class="industry-desc">Micro-precision electrical contacts, heavy-duty busbars, spring terminals, and distribution breaker components.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          <h4 class="industry-title">Industrial Engineering</h4>
+          <p class="industry-desc">Rugged mechanical stamping frameworks, sub-assemblies, and heavy-duty progressive tooling layouts.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path></svg>
+          <h4 class="industry-title">OEM Manufacturing</h4>
+          <p class="industry-desc">End-to-end component engineering matching strict blueprint specifications with automated repeatability.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 14v6m-3-3h6M6 10h2m-2 4h2m-6-8h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"></path></svg>
+          <h4 class="industry-title">Fabrication Industry</h4>
+          <p class="industry-desc">Custom sheet metal shaping, high-speed automated shearing, and specialized modular steel assembly blocks.</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          <h4 class="industry-title">Seating Systems</h4>
+          <p class="industry-desc">Heavy-gauge ergonomic metal seat adjusters, support tracks, pivot pins, and structural structural slide frames.</p>
+        </div>
+
+        <!-- 7 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+          <h4 class="industry-title">Industrial Equipment</h4>
+          <p class="industry-desc">Heavy-duty hardware tools, die block accessories, specialized bolsters, and automated stamping systems.</p>
+        </div>
+
+        <!-- 8 -->
+        <div class="industry-card glass interactive-el">
+          <svg class="industry-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+          <h4 class="industry-title">Global Export Support</h4>
+          <p class="industry-desc">Fully compliant customs documentation, rust-preventive heavy cargo packaging, and seamless global shipping networks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- WHY CHOOSE US SECTION --- -->
+  <section class="section-wrapper section-wrapper-alt" id="why-us">
+    <div class="content-box">
+      <div class="section-header">
+        <div class="section-badge section-badge-purple interactive-el">WHY PARTNER WITH US</div>
+        <h2 class="section-headline">ENGINEERING EXCELLENCE</h2>
+        <p class="section-desc">We deliver uncompromised structural integrity, micro-tolerance stability, and highly automated manufacturing capacities.</p>
+      </div>
+
+      <div class="why-grid">
+        <!-- 1 -->
+        <div class="why-card glass interactive-el">
+          <div class="why-check-wrapper">
+            <svg class="why-check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="why-info">
+            <h4>ISO 9001:2015 Stamping System</h4>
+            <p>Every step maps to rigid international process tracking indices, ensuring absolute repeatability and clean quality audits.</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="why-card glass interactive-el">
+          <div class="why-check-wrapper">
+            <svg class="why-check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="why-info">
+            <h4>End-to-End Product Development</h4>
+            <p>From initial design blueprint modeling and strip layouts to CNC bolster milling, active test tooling runs, and logistics dispatch.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="why-card glass interactive-el">
+          <div class="why-check-wrapper">
+            <svg class="why-check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="why-info">
+            <h4>800-Ton Heavy Press Capacity</h4>
+            <p>Equipped with state-of-the-art heavy mechanical and pneumatic presses capable of forming high-volume progressive bracket runs.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="why-card glass interactive-el">
+          <div class="why-check-wrapper">
+            <svg class="why-check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="why-info">
+            <h4>24×7 Continuous Manufacturing</h4>
+            <p>Active automated machine configurations and staggered team shifts operating round-the-clock to hit aggressive lead targets.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="why-card glass interactive-el">
+          <div class="why-check-wrapper">
+            <svg class="why-check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="why-info">
+            <h4>Export-Ready Packing & Logistics</h4>
+            <p>Heavy-duty protective rust preventive spray coatings, silica gel desiccant packs, and thick wooden sea cargo containers.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="why-card glass interactive-el">
+          <div class="why-check-wrapper">
+            <svg class="why-check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <div class="why-info">
+            <h4>Skilled Engineering Team</h4>
+            <p>Highly skilled design toolmakers, CMM inspection specialists, and electrical component tooling operators coordinating workflow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- MANUFACTURING WORKFLOW --- -->
+  <section class="section-wrapper" id="workflow">
+    <div class="content-box">
+      <div class="section-header">
+        <div class="section-badge interactive-el">SYSTEMATIZED PROTOCOLS</div>
+        <h2 class="section-headline">MANUFACTURING WORKFLOW</h2>
+        <p class="section-desc">Our 5-stage mechanical workflow integrates raw parameter modeling with micrometric validation to assure zero defects.</p>
+      </div>
+
+      <div class="workflow-timeline-wrapper">
+        <!-- Connected Neon Line -->
+        <div class="workflow-connecting-line"></div>
+
+        <div class="workflow-timeline-grid">
+          <!-- STEP 1 -->
+          <div class="workflow-step-card interactive-el">
+            <div class="workflow-node-ring">
+              <span class="workflow-step-num">01</span>
+            </div>
+            <div class="workflow-step-info">
+              <h4 class="workflow-step-title">Requirement Analysis</h4>
+              <p class="workflow-step-desc">Deconstructing part blueprints, tolerances, stamping speeds, and material constraints.</p>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="workflow-step-card interactive-el">
+            <div class="workflow-node-ring">
+              <span class="workflow-step-num">02</span>
+            </div>
+            <div class="workflow-step-info">
+              <h4 class="workflow-step-title">Tool Design & Dev</h4>
+              <p class="workflow-step-desc">Digital progression modeling, simulation, and CAD/CAM machining bolster layout setup.</p>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="workflow-step-card interactive-el">
+            <div class="workflow-node-ring">
+              <span class="workflow-step-num">03</span>
+            </div>
+            <div class="workflow-step-info">
+              <h4 class="workflow-step-title">Prototype Stamping</h4>
+              <p class="workflow-step-desc">Tool assembly calibration and producing first-off samples inside 15-45 minutes.</p>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="workflow-step-card interactive-el">
+            <div class="workflow-node-ring">
+              <span class="workflow-step-num">04</span>
+            </div>
+            <div class="workflow-step-info">
+              <h4 class="workflow-step-title">Quality Inspection</h4>
+              <p class="workflow-step-desc">CMM verification, coordinate audits, and multi-stress load cycle testing loops.</p>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="workflow-step-card interactive-el">
+            <div class="workflow-node-ring">
+              <span class="workflow-step-num">05</span>
+            </div>
+            <div class="workflow-step-info">
+              <h4 class="workflow-step-title">Production & Dispatch</h4>
+              <p class="workflow-step-desc">High-speed automated press runs, anti-rust coatings, packing, and dispatch logistics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FUTURISTIC NASHIK FOOTER --- -->
+  <footer class="footer" id="footer">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand-column">
+        <h3 class="footer-brand-title">NIRAJ ENGINEERING</h3>
+        <p class="footer-brand-tagline">Providing progressive tooling systems, complex stamping dies, and sheet metal manufacturing blocks with dimensional reliability since 2006.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-circle-btn interactive-el">TW</a>
+          <a href="#" class="social-circle-btn interactive-el">FB</a>
+          <a href="#" class="social-circle-btn interactive-el">IG</a>
+          <a href="#" class="social-circle-btn interactive-el">DR</a>
+        </div>
+      </div>
+
+      <!-- Address MIDC Nashik -->
+      <div class="footer-links-column">
+        <h4 class="footer-column-title">NASHIK MANUFACTURING</h4>
+        <address class="footer-address">
+          Niraj Engineering,<br>
+          Plot No. 35, Street No. 13,<br>
+          MIDC Area, Ambad,<br>
+          Nashik, Maharashtra - 422010
+        </address>
+        <div style="font-family: var(--font-mono); font-size: 8px; color: var(--text-muted); margin-top: 10px;">
+          GEOLOC CODE: 19.9575° N, 73.7298° E
+        </div>
+      </div>
+
+      <!-- Contacts info -->
+      <div class="footer-contact-column">
+        <h4 class="footer-column-title">SECURE COMMUNICATIONS</h4>
+        
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Technical Inquiries</span>
+          <a href="mailto:design@nirajengineering.in" class="footer-contact-value interactive-el">design@nirajengineering.in</a>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Landline Operations</span>
+          <a href="tel:02532354047" class="footer-contact-value interactive-el">0253-2354047</a>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Corporate Mobile</span>
+          <a href="tel:+919766200472" class="footer-contact-value interactive-el">+91 97662 00472</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 NIRAJ ENGINEERING. All rights reserved.</span>
+      <span>Designed by creative developers / Nashik manufacturing industries</span>
+    </div>
+  </footer>
+
+  <!-- LOAD GSAP & SCROLLTRIGGER VIA CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
